@@ -1,0 +1,127 @@
+<html>
+<script>
+    let basic_salary;
+    let dearness_allowance;
+    let house_rent;
+    function calculatePercentage(percentageInput) {
+        return house_rent = percentageInput / 100 * basic_salary;
+    }
+
+    function getBasic_salary() {
+        basic_salary = prompt("Enter basic salary");
+        console.log(+calculatePercentage(40) + + calculatePercentage(20) + + basic_salary);
+    }
+    // getBasic_salary();
+
+    let distanceBtCities;
+    function toMeters(km) {
+        return km * 1000;
+    }
+    function toFeet(km) {
+        return km * 3281;
+    }
+    function toInches(km) {
+        return km * 39370.1;
+    }
+    function toCentimeters(km) {
+        return km * 10000;
+    }
+
+    function toGetFinalResult() {
+        distanceBtCities = prompt("Prove the distance");
+        console.log(toMeters(distanceBtCities), 'Km to Meters');
+        console.log(toFeet(distanceBtCities), 'Km to Feet');
+        console.log(toCentimeters(distanceBtCities), 'Km to Centimeters');
+        console.log(toInches(distanceBtCities), 'Km to Inches');
+    }
+    // toGetFinalResult()
+    let marksObtainedByStudent = 0;
+    function preparingTotalMarks(noOfSubjects) {
+        for (let index = 0; index < noOfSubjects; index++) {
+            let eachSubject = prompt("Provide marks");
+            marksObtainedByStudent += +eachSubject;
+        }
+        return marksObtainedByStudent;
+    }
+
+    function calculateAggregateMarks() {
+        console.log(marksObtainedByStudent, 'marksObtainedByStudent');
+        return marksObtainedByStudent
+    }
+    function calculateTotalPercentageMarks(noOfSubjects) {
+        console.log(marksObtainedByStudent / (noOfSubjects * 100) * 100, 'calculateTotalPercentageMarks');
+        return marksObtainedByStudent / (noOfSubjects * 100) * 100;
+
+    }
+    function getResult() {
+        preparingTotalMarks(5);
+        calculateAggregateMarks();
+        calculateTotalPercentageMarks(5);
+    }
+    //  getResult();
+
+    function convertFahrenheitToCelsius() {
+        let F = prompt('Provide Fahrenheit');
+        return celsius = (F - 32) * 5 / 9;
+    }
+
+    // console.log(convertFahrenheitToCelsius());
+
+    function readLengthNBreathOfRec() {
+        const lengthOfRectange = prompt('Provide length');
+        const breathOfRectangle = prompt('provide breath');
+        calAreaOfRec(lengthOfRectange, breathOfRectangle);
+    }
+
+    function readLengthNBreathOfCircle() {
+        const lengthOfCircle = prompt('Provide length');
+        const breathOfCircle = prompt('provide breath');
+    }
+
+    function calAreaOfRec(l, b) {
+        console.log(l * b, 'area');
+        return l * b;
+    }
+    // readLengthNBreathOfRec();
+    //  console.log(2 * readLengthNBreathOfRec(), 'perimeter of rectangle');
+
+    function interchange() {
+        let tempVar;
+        let C = prompt('provide any content');
+        tempVar = C;
+        let D = prompt('provide any content');
+        C = D;
+        D = tempVar;
+        console.log(C, D);
+    }
+    // interchange();
+
+    function findSumOFItsDigits() {
+        let number = prompt('Provide 5 digit number');
+        let result = 0;
+        for (let index = 0; index < number.length; index++) {
+            const element = number[index];
+            result += +element;
+        }
+        console.log(result);
+    }
+    // findSumOFItsDigits();
+
+    function numberReverse() {
+        let number = prompt('Provide 5 digit number');
+        let result = 0;
+        for (let index = number.length - 1; index >= 0; index--) {
+            const element = number[index];
+            console.log(element);
+        }
+    }
+    // numberReverse();
+
+    function calculateSumOFFirstNLast() {
+        let number = prompt('Provide 4 digit number');
+        console.log(+number[0] + +number[number.length - 1]);
+    }
+    // calculateSumOFFirstNLast();
+</script>
+
+</html>
