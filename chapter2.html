@@ -1,0 +1,195 @@
+<html>
+<script>
+    let cp;
+    let sp;
+    readingCostNSellingPrice = () => {
+        cp = prompt('Cost price');
+        sp = prompt('Selling price');
+        determineProfitOrLoss(cp, sp);
+    }
+
+    determineProfitOrLoss = (cp, sp) => {
+        // readingCostNSellingPrice();
+        if (cp > sp) {
+            debugger;
+            console.log(cp - sp, 'Loss');
+            console.log(((cp - sp) / cp) * 100, 'Loss percentage');
+        } else {
+            console.log(sp - cp, 'Profit');
+            console.log(((cp - sp) / cp) * 100, 'Profit percentage');
+        }
+    }
+    // readingCostNSellingPrice();
+    findOddOrEven = () => {
+        const num = prompt('Enter ur number');
+        if (!(num % 2)) {
+            alert('given number is even number');
+        } else {
+            alert('given number is odd number')
+        }
+    }
+    // findOddOrEven();
+
+    findLeapYearOrNot = () => {
+        const input = prompt('Provide any year');
+        if (input % 4 === true && input % 100 !== 0) {
+            alert('leap year');
+        } else if (input % 400 === true) {
+            alert('leap year');
+        } else {
+            alert('Not a leap year');
+        }
+    }
+
+    // findLeapYearOrNot();
+
+
+    findFirstJan = () => {
+        const base_year = 1900;
+        let year = prompt('provide year');
+        year = (+year - 1) - base_year;
+        const leap_year = year / 4;
+        const remaining_years = (year - leap_year);
+        const remaining_days = (remaining_years * 365) + (leap_year * 366) + 1;
+        const day = remaining_days % 7;
+        switch (day) {
+            case 0:
+                alert('Monday');
+                break;
+            case 1:
+                alert('Tuesday');
+                break;
+            case 2:
+                alert('Wednesday');
+                break;
+            case 3:
+                alert('Thursday');
+                break;
+            case 4:
+                alert('Friday');
+                break;
+            case 5:
+                alert('Saturday');
+                break;
+            case 6:
+                alert('Sunday');
+                break;
+            default:
+                alert('Invalid entry')
+                break;
+        }
+    }
+    // findFirstJan();
+
+    findOriginalNReverse = () => {
+        const input = prompt("provide number");
+        for (let index = input.length - 1; index >= 0; index--) {
+            if (input[index] !== input[(input.length - index) - 1]) {
+                console.log('Not matched');
+                return;
+            }
+        }
+        console.log('Matched');
+        return;
+    }
+    // findOriginalNReverse();
+
+
+    findYoungest = () => {
+        const ram_age = prompt('ram age');
+        const shyam_age = prompt('shyam age');
+        const ajay_age = prompt('rajay age');
+        let temp = 0;
+        if (ram_age <= shyam_age) {
+            if (ram_age <= ajay_age) {
+                alert('ram is yongest');
+                if (ram_age <= shyam_age) {
+                    alert('am is yongest');
+                } else {
+                    alert('Ayaj is youngest;')
+                }
+            }
+        } else {
+            if (shyam_age <= ajay_age) {
+                alert('Shaym is yongest');
+            } else {
+                alert('Ajay is yongest');
+            }
+        }
+    }
+    // findYoungest();
+    CheckForValidTriangle = () => {
+        const angleOne = prompt('Angle 1');
+        const angleTwo = prompt('Angle 2');
+        const angleThree = prompt('Angle 3');
+
+        if (+angleOne + +angleTwo + +angleThree === 180) {
+            alert('Valid triangle');
+        } else {
+            alert('Invalid triangle');
+        }
+    }
+    // CheckForValidTriangle();
+
+    calculateSteelGrade = () => {
+        const hardness = prompt('Hardness');
+        const carbon = prompt('carbon');
+        const tenstile = prompt('tenstile');
+        calculateGrades(hardness, carbon, tenstile);
+    }
+    calculateGrades = (h, c, t) => {
+        if (h >= 50 && c >= 0.7 && t >= 5600) {
+            alert('grade is 10');
+        } else if (c >= 0.7 && t >= 5600) {
+            alert('grade is 9');
+        } else if (h >= 50 && t >= 5600) {
+            alert('grade is 8');
+        } else if (h >= 50 && t >= 5600) {
+            alert('grade is 7');
+        } else if (h >= 50 || c >= 0.7 || t >= 5600) {
+            alert('grade is 6');
+        } else {
+            alert('Low garde');
+        }
+    }
+
+    // calculateSteelGrade();
+    readingDays = () => {
+        const days = +prompt('Days');
+        calculateFine(days);
+    }
+    calculateFine = (days) => {
+        if (days <= 5) {
+            alert(' fine is 50 paise');
+        } else if (days >= 6 && days <= 10) {
+            alert(' fine is 1 rupee');
+        } else if (days >= 10 && days < 30) {
+            alert(' fine is 5 rupees');
+        } else {
+            alert(' Membership cancelled');
+        }
+    }
+      // readingDays();
+
+    readingTime = () => {
+        const time = prompt('Time');
+        findingEfficiency(time);
+    }
+
+    findingEfficiency = (t) => {
+        if (t <= 2 && t <= 3) {
+            alert('highly efficient')
+        } else if (t >= 3 && t <= 4) {
+            alert('ordered to improve speed')
+        } else if (t >= 4 && t <= 5) {
+            alert(' training to improve his speed')
+        } else {
+            alert(' leave the company.')
+        }
+    }
+    readingTime();
+
+  
+</script>
+
+</html>

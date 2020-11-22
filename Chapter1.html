@@ -86,10 +86,10 @@
     //  console.log(2 * readLengthNBreathOfRec(), 'perimeter of rectangle');
 
     function interchange() {
-        let tempVar;
+        // let tempVar;
         let C = prompt('provide any content');
-        tempVar = C;
         let D = prompt('provide any content');
+        let tempVar = C;
         C = D;
         D = tempVar;
         console.log(C, D);
@@ -122,6 +122,28 @@
         console.log(+number[0] + +number[number.length - 1]);
     }
     // calculateSumOFFirstNLast();
+    let percentage_men = 52;
+    let total_literacyRate = 48;
+    let literateMen = 35;
+    let totalPopulation = 80000;
+    function calculateIlliterateMenWomen() {
+        console.log(52 / 100 * totalPopulation);
+        return 52 / 100 * totalPopulation;
+    }
+    // calculateIlliterateMenWomen();
+    let amount;
+    function amountToWithdraw() {
+        amount = prompt('Provide amount in hundreds');
+        findingTotalCurrencyNotes(10);
+        findingTotalCurrencyNotes(50);
+        findingTotalCurrencyNotes(100);
+    }
+    function findingTotalCurrencyNotes(denomination) {
+        let result = amount / denomination;
+        console.log(result);
+        return result;
+    }
+    amountToWithdraw();
 </script>
 
 </html>
