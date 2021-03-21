@@ -1,0 +1,24 @@
+    $ git status
+    [...]
+    # Untracked files:
+    [...]
+    #       Documentation/Let Us C - Yashwant Kanetkar.pdf
+    #       Documentation/gitignore.html
+    #       file.o
+    #       lib.a
+    #       src/internal.o
+    [...]
+    $ cat .git/info/exclude
+    # ignore objects and archives, anywhere in the tree.
+    *.[oa]
+    $ cat Documentation/.gitignore
+    # ignore generated html files,
+    *.pdf
+    # except Let Us C - Yashwant Kanetkar.pdf which is maintained by hand
+    !Let Us C - Yashwant Kanetkar.pdf
+    $ git status
+    [...]
+    # Untracked files:
+    [...]
+    #       Documentation/Let Us C - Yashwant Kanetkar.pdf
+    [...]
