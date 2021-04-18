@@ -1,0 +1,121 @@
+<html>
+<script>
+    let arr = [
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9, 10, 11, 12],
+        [13, 14, 15, 16]
+    ];
+    let resultArr = [];
+    for (i = 0; i < arr.length; i++) {
+        resultArr[i] = [];
+        for (let j = 0; j < arr[i].length; j++) {
+            resultArr[i][j] = arr[j][i];
+        }
+    }
+
+    // console.log(resultArr);
+    let puzzleArr = [
+        [14, 28, 3, 45],
+        [5, 6, 3, 8],
+        [9, 6, 11, 12],
+        [13, 19, 15, '']
+    ];
+    let list = '';
+    const puzzle = (input) => {
+        for (let i = 0; i < input.length; i++) {
+            const element = input[i];
+            for (let k = 0; k < element.length; k++) {
+                list += `<li style="border: 1px solid black; padding: 10px; width: 10px"> ${input[i][k]} </li>`;
+            }
+            document.write(`
+            <ul style="display: inline-flex; list-style: none; margin:0px; padding: 0px">
+                ${list}
+            </ul>
+            <br />
+            `)
+            list = '';
+        }
+    }
+    // puzzle(puzzleArr);
+
+    document.addEventListener("keydown", (event) => {
+        // console.log(event);
+        // findingEmptyIndex(event.keyCode, puzzleArr);
+        // if (event.keyCode === 38) { // up
+        //     findingEmptyIndex('up', puzzleArr);
+        // } else if (event.keyCode === 39) { // right
+        //     findingEmptyIndex('right', puzzleArr);
+        // } else if (event.keyCode === 40) { //down
+        //     findingEmptyIndex('down', puzzleArr);
+        // } else { // left
+        //     findingEmptyIndex('left', puzzleArr);
+        // } 
+        // event.keyCode = '';
+    });
+
+    const findingEmptyIndex = (key, input) => {
+        for (let i = 0; i < input.length; i++) {
+            if (input[i].indexOf('') !== -1) {
+                updatingPuzzle(key, i, input[i].indexOf(''));
+            }
+        }
+    }
+
+    const updatingPuzzle = (key, index, emptyValIndex) => {
+        let colnedPuzzleArr = [...puzzleArr];
+        let updateCell = colnedPuzzleArr[index - 1][emptyValIndex];
+        console.log('printing before logic');
+        if (key == 38) {
+
+            colnedPuzzleArr[index - 1][emptyValIndex] = '';
+            colnedPuzzleArr[index][emptyValIndex] = updateCell;
+            puzzle(colnedPuzzleArr);
+            console.log('printing');
+        } else {
+            console.log('un implemnted key stroke', key);
+        }
+        // else if (key === 'ArrowDown') {
+        //     input[i], input[i].indexOf('');
+        // } else if (key === 'ArrowRight') {
+        //     input[i], input[i].indexOf('');
+        // } else if (key === 'ArrowLeft') {
+        //     input[i], input[i].indexOf('');
+        // }
+    }
+    let numbers = [12, 10, 15, 11, 14, 13, 0];
+    const sort = (array) => {
+        var done = false;
+        while (!done) {
+            done = true;
+            for (var i = 1; i < array.length; i += 1) {
+                if (array[i - 1] > array[i]) {
+                    done = false;
+                    var tmp = array[i - 1];
+                    array[i - 1] = array[i];
+                    array[i] = tmp;
+                }
+            }
+        }
+
+        return array;
+    }
+    // console.log(sort(numbers));
+
+    let stringToSplit = 'Grim                   return     to   the   planet    of             apes!! ';
+    const spaceTriming = (input) => {
+        let saperatedStr = input.split(' ');
+        for (let i = 1; i < saperatedStr.length; i++) {
+            if (saperatedStr[i - 1] === saperatedStr[i]) {
+                saperatedStr.splice(i - 1, 2);
+                i = i - 2;
+            }
+            console.log(saperatedStr);
+        }
+        return saperatedStr.join(' ');
+    }
+    console.log(spaceTriming(stringToSplit));
+
+</script>
+
+</html>
